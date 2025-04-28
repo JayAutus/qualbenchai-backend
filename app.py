@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Configure CORS for your Cloudflare frontend domain(s)
 CLOUDFLARE_FRONTEND_DOMAINS = ["https://qual-bench-ai-web.jacobautus2.workers.dev/"]  # Replace with your actual domain(s)
-CORS(app, resources={r"/*": {"origins": CLOUDFLARE_FRONTEND_DOMAINS}})
+CORS(app, resources={r"/*": {"origins": CLOUDFLARE_FRONTEND_DOMAINS + ["http://localhost:3000"]}})
 
 # SQLAlchemy setup
 DATABASE_URL = os.environ.get('mysql+pymysql://root:csusmcapstone@34.102.56.241:3306/qualbenchaidb')
