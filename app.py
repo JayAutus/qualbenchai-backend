@@ -12,7 +12,7 @@ CLOUDFLARE_FRONTEND_DOMAINS = ["https://qual-bench-ai-web.jacobautus2.workers.de
 CORS(app, resources={r"/*": {"origins": CLOUDFLARE_FRONTEND_DOMAINS + ["http://localhost:3000"]}})
 
 # SQLAlchemy setup
-DATABASE_URL = os.environ.get('mysql+pymysql://root:csusmcapstone@34.102.56.241:3306/qualbenchaidb')
+DATABASE_URL = os.environ.get('mysql+pymysql://capstoneteam:csusmcapstone@34.102.56.241:3306/qualbenchaidb')
 if DATABASE_URL:
     engine = create_engine(DATABASE_URL, echo=False)  # Set echo to False in production
 else:
